@@ -63,8 +63,8 @@ Welcome to the **Tailwind Car App** repository! This is an **E-commerce platform
 
 ## 📬 Contact
 For any inquiries, feel free to reach out:
-- 📧 Email: your-email@example.com *(Update with your email)*
-- 🌍 Website: [YourWebsite.com](https://yourwebsite.com)
+- 📧 **Email**: [mahmoudmegahd010000@gmail.com](mailto:mahmoudmegahd010000@gmail.com)  
+- 🌐 **Portfolio**: [mego354.github.io](https://mego354.github.io/mego354/)  
 
 ---
 **📝 Note:** Project is not done yet, just a demo so you can 
