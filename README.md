@@ -3,7 +3,7 @@
 Welcome to the **Tailwind Car App** repository! This is an **E-commerce platform** built using **Django** and **Tailwind CSS**, designed for selling car parts online.
 
 ## 🚀 Live Demo
-[Visit the Website](https://megahd.pythonanywhere.com/)
+[Visit the Website](https://mego354.github.io/Tailwind-car-app/)
 
 ## 📌 Features
 - User authentication (Login, Register, Logout)
