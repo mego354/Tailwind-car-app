@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://via.placeholder.com/32x32/f59e0b/white?text=A" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                screens: {
+                    sm: "340px",
+                    md: "540px",
+                    lg: "768px",
+                    xl: "1180px",
+                },
+                extend: {
+                    fontFamily: {
+                        "Jost": ['Jost', 'sans-serif'],
+                        "Lobster": ['Lobster', 'sans-serif'],
+                        "Jost-Bold": ['Jost-Bold', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#1E40AF', 
+                    },
+                    keyframes: {
+                        move: {
+                            "50%": { transform: "translateY(-1rem)" }
+                        },
+                        rotate: {
+                            "0%": { transform: "rotate(0deg)" },
+                            "100%": { transform: "rotate(360deg)" },
+                        },
+                        scaleUp: {
+                            "0%": { transform: "scale(0.8)" },
+                            "50%": { transform: "scale(1.2)" },
+                            "100%": { transform: "scale(0.8)" },
+                        },
+                    },
+                    animation: {
+                        movingY: "move 3s linear infinite",
+                        rotating: "rotate 15s linear infinite",
+                        scaling: "scaleUp 3s linear infinite",
+                    },
+                    container: {
+                        center: true,
+                        padding: {
+                            DEFAULT: "12px",
+                            md: "32px"
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <title>Azaz Cars - Premium Auto Parts</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Lobster:wght@400&display=swap');
+        
+        /* Custom Fonts */
+        @font-face {
+            font-family: 'Jost';
+            src: url('theme/static/fonts/Jost-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Lobster';
+            src: url('theme/static/fonts/Lobster-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Jost-Bold';
+            src: url('theme/static/fonts/Jost-Bold.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        /* Custom Styles */
+        html {
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: rgb(2 6 23);
+            color: rgb(255 255 255);
+            font-family: 'Jost', sans-serif;
+            letter-spacing: 0.05em;
+        }
+
+        section {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+
+        @media (min-width: 768px) {
+            section {
+                padding-top: 5rem;
+                padding-bottom: 5rem;
+            }
+        }
+
+        h1 {
+            font-size: 1.875rem;
+            line-height: 2.25rem;
+            font-weight: 700;
+        }
+
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 2.25rem;
+                line-height: 2.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            h1 {
+                font-size: 3rem;
+                line-height: 1;
+            }
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            line-height: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            h2 {
+                font-size: 1.875rem;
+                line-height: 2.25rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            h2 {
+                font-size: 2.25rem;
+                line-height: 2.5rem;
+            }
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+        }
+
+        @media (min-width: 768px) {
+            h3 {
+                font-size: 1.5rem;
+                line-height: 2rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            h3 {
+                font-size: 1.875rem;
+                line-height: 2.25rem;
+            }
+        }
+
+        .nav-link {
+            font-size: 1.125rem;
+            line-height: 1.75rem;
+            font-weight: 700;
+            transition-duration: 300ms;
+        }
+
+        .nav-link:hover {
+            color: rgb(245 158 11);
+        }
+
+        /* active */
+        .active {
+            color: rgb(245 158 11);
+            border-bottom: 1px solid rgb(255 255 255);
+        }
+
+        .title {
+            font-family: 'Lobster', cursive;
+            color: rgb(245 158 11);
+        }
+
+        .font-lobster {
+            font-family: 'Lobster', cursive;
+        }
+
+        .font-Jost {
+            font-family: 'Jost', sans-serif;
+        }
+
+        .font-Lobster {
+            font-family: 'Lobster', cursive;
+        }
+
+        /* Button */
+        .btn {
+            border: 1px solid rgb(180 83 9);
+            background-color: rgb(245 158 11);
+            border-radius: 0.375rem;
+            padding: 0.5rem 1.25rem;
+            transition-duration: 300ms;
+        }
+
+        .btn span {
+            font-weight: 700;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .btn_outline {
+            background-color: transparent;
+        }
+
+        .btn_outline:hover {
+            background-color: rgb(245 158 11);
+        }
+
+        .popular__card:hover img {
+            top: -2rem;
+        }
+
+        .swiper-pagination-bullet {
+            background-color: rgb(100 116 139);
+            width: 0.75rem;
+            height: 0.75rem;
+        }
+        
+        /* Container styles are now handled by Tailwind config */
+        
+        /* Animations are now handled by Tailwind config */
+        
+        .hidden {
+            display: none;
+        }
+        
+        @media (min-width: 1024px) {
+            .lg\:block {
+                display: block;
+            }
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .modal-content {
+            background-color: #1e293b;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            width: 90%;
+            max-width: 500px;
+        }
+        
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .close:hover {
+            color: #f59e0b;
+        }
+        
+        .dashboard-card {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            border: 1px solid #475569;
+        }
+        
+        .profile-section {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+    </style>
+</head>
+
+<body>
+    <!--~~~~~~~~~~~~~~~ Header ~~~~~~~~~~~~~~~-->
+    <header id="navbar" class="bg-slate-950 fixed w-full top-0 left-0 z-50">
+      <nav class="container flex items-center justify-between md:h-16 sm:h-20">
+          <div class="sm:text-2xl">
+            Azaz Cars
+          </div>
+            <div id="navMenu" class="fixed top-0 left-[-100%] w-full h-screen bg-slate-950/80 
+            backdrop-blur-sm flex items-center justify-center duration-300 overflow-hidden z-[60]
+            lg:static lg:h-fit lg:min-h-fit lg:w-auto lg:bg-transparent">
+                <ul class="flex flex-col items-center gap-8 lg:flex-row">
+                    <li>
+                        <a href="#home" class="nav-link active">Home</a>
+                    </li>
+                    <li>
+                        <a href="#about" class="nav-link">About</a>
+                    </li>
+                    <li>
+                        <a href="#popular" class="nav-link">Products</a>
+                    </li>
+                    <li>
+                        <a href="#review" class="nav-link">Reviews</a>
+                    </li>
+                    <li>
+                        <a href="#cart" class="nav-link">Cart</a>
+                    </li>
+                    <li>
+                        <a href="#dashboard" class="nav-link">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#profile" class="nav-link">Profile</a>
+                    </li>
+                    <li>
+                        <button onclick="openModal('loginModal')" class="nav-link">Login</button>
+                    </li>
+                    <li>
+                        <button onclick="openModal('signupModal')" class="nav-link">Sign Up</button>
+                    </li>
+                </ul>
+              <div class="absolute bottom-0 -right-10 opacity-90 lg:hidden">
+                <img src="carapp\static\assets\img\exh-1.png" alt="leaf_image" class="w-32">
+              </div>
+              <div class="absolute -top-5 left-0 rotate-90 opacity-90 lg:hidden">
+                <img src="carapp\static\assets\img\wheel_1.png" alt="leaf_image" class="w-32">
+              </div>
+            </div>
+              <div class="sm:text-3xl cursor-pointer z-50 lg:hidden">
+                <i class="ri-menu-4-line" id="menuIcon"></i>
+              </div>
+    
+      </nav>
+  
+  </header>
+
+    <main>
+        <!--~~~~~~~~~~~~~~~ Home ~~~~~~~~~~~~~~~-->
+        <section id="home" class="relative">
+            <div class="container">
+
+                <!-- blob 1 -->
+                <div class="w-64 h-64 bg-slate-700 rounded-full blur-3xl -z-10 opacity-40
+                absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+                
+                <!-- blob 2 -->
+                <div class="w-64 h-64 bg-slate-700 rounded-full blur-3xl -z-10 opacity-40
+                absolute top-0 bottom-0"></div>
+                
+                <div class="flex flex-col items-center gap-5 lg:flex-row">
+
+                    <!-- content -->
+                    <div class="home__data w-full space-y-5 lg:w-1/2">
+                        <h1>
+                            Upgrade your <span class="text-amber-500">ride</span> with<br>high-<span class="text-amber-500">performance</span> parts.
+                        </h1>
+                        <p class="text-slate-300 font-lobster">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio fugiat eveniet, reprehenderit veritatis aut explicabo voluptatum ullam itaque tenetur numquam!
+                        </p>
+                        <div class="flex flex-col sm:flex-row items-center gap-2 md:gap-4 lg:pt-5 xl:pt-10">
+                            <button class="btn">
+                                <span>Shop Now</span>
+                                <i class="ri-leaf-line"></i>
+                            </button>
+                            <button class="btn btn_outline">
+                                <span>Know More</span>
+                                <i class="ri-leaf-line"></i>
+                            </button>
+                        </div>
+                        <p class="text-xs font-lobster text-slate-300">
+                            You will get 30-days free trial.
+                        </p>
+                        <div class="flex items-center gap-5 text-lg lg:pt-10">
+                            <i class="ri-facebook-fill text-slate-300 hover:text-amber-500 cursor-pointer duration-300"></i>
+                            <i class="ri-twitter-x-line text-slate-300 hover:text-amber-500 cursor-pointer duration-300"></i>
+                            <i class="ri-instagram-line text-slate-300 hover:text-amber-500 cursor-pointer duration-300"></i>
+                            <i class="ri-linkedin-fill text-slate-300 hover:text-amber-500 cursor-pointer duration-300"></i>
+                        </div>
+
+                    </div>
+                    
+                    <!-- home image -->
+                    <div class="w-full relative lg:w-1/2">
+                        <img class="home__image" src="carapp\static\assets\img\car_1.png" alt="home_image">
+                        
+                        <!-- decorative icons -->
+                        <div class="absolute -top-10 right-0 opacity-30 
+                        xl:top-5 animate-movingY">
+                            <i class="fa-solid fa-screwdriver-wrench text-6xl text-amber-400"></i>
+                        </div>
+                        <div class="absolute -bottom-2 right-0 opacity-30
+                        xl:bottom-18 animate-rotating">
+                            <i class="fa-solid fa-gear text-6xl text-amber-400"></i>
+                        </div>
+                        <div class="hidden absolute -top-10 -left-0 opacity-30 animate-scaling lg:block xl:top-4">
+                            <i class="fa-solid fa-hammer text-6xl text-amber-400"></i>
+                        </div>
+                    </div>
+                            
+                </div>    
+            </div>
+        </section>
+
+        <!--~~~~~~~~~~~~~~~ Services ~~~~~~~~~~~~~~~-->
+        <div class="bg-white text-slate-900 py-20">
+            <div class="container w-full grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 ">
+
+                <!-- card 1 -->
+                <div class="service__card border border-slate-900 p-5 cursor-pointer 
+                rounded-md hover:shadow-2xl hover:translate-y-1 duration-300 space-y-5">
+                    <div class="flex items-center gap-5">
+                        <i class="ri-truck-line text-3xl md:text-4xl"></i>
+                        <p class="md:text-lg font-bold">
+                            Fast <br>
+                            Delivery
+                        </p>
+                    </div>
+                    <p class="font-lobster">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, facere debitis omnis
+                    </p>
+
+                </div>
+    
+                <!-- card 2 -->
+                <div class="service__card border border-slate-900 p-5 cursor-pointer 
+                rounded-md hover:shadow-2xl hover:translate-y-1 duration-300 space-y-5">
+                    <div class="flex items-center gap-5">
+                        <i class="ri-customer-service-line text-3xl md:text-4xl"></i>
+                        <p class="md:text-lg font-bold">
+                            Great Customer <br>
+                            Service
+                        </p>
+                    </div>
+                    <p class="font-lobster">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, facere debitis omnis
+                    </p>
+
+                </div>
+    
+                <!-- card 3 -->
+                <div class="service__card border border-slate-900 p-5 cursor-pointer 
+                rounded-md hover:shadow-2xl hover:translate-y-1 duration-300 space-y-5">
+                    <div class="flex items-center gap-5">
+                        <i class="fa-solid fa-screwdriver-wrench text-3xl md:text-4xl"></i>
+                        <p class="md:text-lg font-bold">
+                            Original <br>
+                            Parts
+                        </p>
+                    </div>
+                    <p class="font-lobster">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, facere debitis omnis
+                    </p>
+
+                </div>
+    
+                <!-- card 4 -->
+                <div class="service__card border border-slate-900 p-5 cursor-pointer 
+                rounded-md hover:shadow-2xl hover:translate-y-1 duration-300 space-y-5">
+                    <div class="flex items-center gap-5">
+                        <i class="ri-money-dollar-circle-line text-3xl md:text-4xl"></i>
+                        <p class="md:text-lg font-bold">
+                            Affordable <br>
+                            Price
+                        </p>
+                    </div>
+                    <p class="font-lobster">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, facere debitis omnis
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+
+        <!--~~~~~~~~~~~~~~~ About us ~~~~~~~~~~~~~~~-->
+        <section id="about" class="relative overflow-hidden">
+
+            <div class="about__leaf absolute -top-8 -right-12 opacity-50">
+                <img src="carapp\static\assets\img\exh-1.png" alt="leaf_image" 
+                class="w-40 md:w-52 xl:w-64">
+            </div>
+
+            <div class="about__top flex flex-col items-center gap-3 text-center mb-10 md:mb-20">
+                <h2 class="title">About Us</h2>
+                <p class="max-w-2xl">Follow instruction for more</p>
+            </div>
+
+            <div class="container space-y-10 xl:space-y-0">
+                <!-- item 1 -->
+                <div class="flex flex-col items-center lg:flex-row gap-5">
+                    <!-- image -->
+                    <div class="about__item__1-img w-full lg:w-1/2">
+                        <img src="carapp\static\assets\img\home_1.png" alt="about_image"
+                        class="w-full sm:w-2/3 lg:w-full xl:w-2/3 mx-auto">
+                    </div>    
+                    <!-- content -->
+                    <div class="about__item__1-content w-full lg:w-1/2">
+                        <div class="space-y-5">
+                            <h3>
+                                Enhance your <span class="text-amber-500">driving</span> experience
+                                <br>with <span class="text-amber-500">precision</span> engineering.
+                            </h3>
+                            <p clase="text-state-300 font-Lobste">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis ratione rem maxime veniam cum libero voluptas tempora aut saepe similique, eos corporis. Expedita culpa consequatur animi deleniti ullam adipisci iure sequi dolores modi aliquam laudantium,
+                                explicabo nobis quia id reprehenderit.?
+                            </p>
+                        </div>    
+                    </div>    
+                </div>
+
+                <!-- item 2 -->
+                <div class="flex flex-col items-center lg:flex-row-reverse gap-5">
+                    <!-- image -->
+                    <div class="about__item__2-img w-full lg:w-1/2">
+                        <img src="carapp\static\assets\img\wheel_2.png" alt="about_image"
+                        class="w-full sm:w-2/3 lg:w-full xl:w-2/3 mx-auto">
+                    </div>    
+                    <!-- content -->
+                    <div class="about__item__2-content w-full lg:w-1/2">
+                        <div class="space-y-5">
+                            <h3>
+                                Join us<br>
+                                and take <span class="text-amber-500">your car</span>
+                                to the next level.
+                            
+                            </h3>
+                            <p clase="text-state-300 font-Lobste">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis ratione rem maxime veniam cum libero voluptas tempora aut saepe similique, eos corporis. Expedita culpa consequatur animi deleniti ullam adipisci iure sequi dolores modi aliquam laudantium,
+                                explicabo nobis quia id reprehenderit.?
+                            </p>
+                        </div>    
+                    </div>    
+                </div>
+                
+            </div>
+
+        </section>
+
+        <!--~~~~~~~~~~~~~~~ Popular ~~~~~~~~~~~~~~~-->
+        <section id="popular" class="bg-slate-900">
+            <div class="popular__top flex flex-col items-center gap-3 text-center mb-40">
+                <h2 class="title">Your Choice Plant</h2>
+                <p class="max-w-2xl">Follow instruction for more</p>
+            </div>
+
+            <div class="container w-full grid grid-cols-1 gap-x-8 gap-y-36
+                md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+
+                <!-- card 1 -->
+                <div class="popular__card bg-slate-950 p-10 pt-24 rounded-md relative">
+                    <img src="carapp\static\assets\img\cart_1.png" alt="popular_image"
+                    class="w-56 absolute -top-5 left-1/2 transform
+                    -translate-x-1/2 -translate-y-1/2 duration-500">
+                
+                    <p class="italic">Lighting System</p>
+                    <h3>Headlights</h3>
+
+                    <div class="text-amber-500 text-xs py-3">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-fill"></i>
+                        <i class="ri-star-line text-gray-400"></i>
+                        <i class="ri-star-line text-gray-400"></i>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <p class="text-lg">$5</p>
+                        <button class="bg-amber-500 px-2 py-1 rounded-sm text-lg">
+                            <i class="ri-shopping-cart-fill"></i>
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- card 2 -->
+                <div class="popular__card bg-slate-950 p-10 pt-24 rounded-md relative">
+                    <img src="carapp\static\assets\img\cart_2.png" alt="popular_image"
+                    class="w-56 absolute -top-5 left-1/2 transform
+                    -translate-x-1/2 -translate-y-1/2 duration-500">
+                
+                    <p class="italic">Brake System</p>
+                    <h3>Brake Disc & Caliper</h3>
+
+                    <div class="text-amber-500 text-xs py-3">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-fill"></i>
+                        <i class="ri-star-line text-gray-400"></i>
+                        <i class="ri-star-line text-gray-400"></i>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <p class="text-lg">$5</p>
+                        <button class="bg-amber-500 px-2 py-1 rounded-sm text-lg">
+                            <i class="ri-shopping-cart-fill"></i>
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- card 3 -->
+                <div class="popular__card bg-slate-950 p-10 pt-24 rounded-md relative">
+                    <img src="carapp\static\assets\img\cart_3.png" alt="popular_image"
+                    class="w-56 absolute -top-5 left-1/2 transform
+                    -translate-x-1/2 -translate-y-1/2 duration-500">
+                
+                    <p class="italic">Brake System</p>
+                    <h3>Brake Rotors & Pads</h3>
+
+                    <div class="text-amber-500 text-xs py-3">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-fill"></i>
+                        <i class="ri-star-line text-gray-400"></i>
+                        <i class="ri-star-line text-gray-400"></i>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <p class="text-lg">$5</p>
+                        <button class="bg-amber-500 px-2 py-1 rounded-sm text-lg">
+                            <i class="ri-shopping-cart-fill"></i>
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- card 4 -->
+                <div class="popular__card bg-slate-950 p-10 pt-24 rounded-md relative">
+                    <img src="carapp\static\assets\img\cart_4.png" alt="popular_image"
+                    class="w-56 absolute -top-5 left-1/2 transform
+                    -translate-x-1/2 -translate-y-1/2 duration-500">
+                
+                    <p class="italic">Engine Components</p>
+                    <h3>Engine Block</h3>
+
+                    <div class="text-amber-500 text-xs py-3">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-fill"></i>
+                        <i class="ri-star-line text-gray-400"></i>
+                        <i class="ri-star-line text-gray-400"></i>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <p class="text-lg">$5</p>
+                        <button class="bg-amber-500 px-2 py-1 rounded-sm text-lg">
+                            <i class="ri-shopping-cart-fill"></i>
+                        </button>
+                    </div>
+
+                </div>
+                
+            </div>
+        </section>
+
+        <!--~~~~~~~~~~~~~~~ Review ~~~~~~~~~~~~~~~-->
+        <section id="review" class="relative mb:20 md:mb-28 overflow-hidden">
+
+            <div class="review__leaf absolute -top-8 -left-12 opacity-50">
+                <img src="carapp\static\assets\img\exh-1.png" alt="leaf_image"
+                class="w-40 md:w-54 xl:w-64">
+            </div>
+
+            <div class="review__top flex flex-col items-center gap-3 text-center mb-10 md:mb-20">
+                <h2 class="title">Customer Review</h2>
+                <p class="max-w-2xl">Follow instruction for more</p>
+            </div>
+
+            <div class="review__swiper container">
+                <div class="swiper py-12">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide">
+                            <div class="flex flex-col gap-5 bg-slate-900 rounded-md p-6">
+                                <p class="font-Lobster">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique culpa ut amet voluptas asperiores alias sed consequatur.</p>   
+                                <div class="flex items-center">
+                                    <img src="carapp\static\assets\img\review-1.jpg" alt="review_image"
+                                    class="w-12 h-12 rounded-full">
+                                    <div class="ml-2 ">
+                                        <p class="text-amber-500 uppercase">John doe</p>   
+                                        <p>Designer</p>   
+                                    </div>    
+                                </div>   
+                                <i class="ri-double-quotes-r text-4xl ml-auto"></i>
+                            </div>
+                        </li>
+
+                        <li class="swiper-slide">
+                            <div class="flex flex-col gap-5 bg-slate-900 rounded-md p-6">
+                                <p class="font-Lobster">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique culpa ut amet voluptas asperiores alias sed consequatur.</p>   
+                                <div class="flex items-center">
+                                    <img src="carapp\static\assets\img\review-2.jpg" alt="review_image"
+                                    class="w-12 h-12 rounded-full">
+                                    <div class="ml-2 ">
+                                        <p class="text-amber-500 uppercase">John doe</p>   
+                                        <p>Designer</p>   
+                                    </div>    
+                                </div>   
+                                <i class="ri-double-quotes-r text-4xl ml-auto"></i>
+                            </div>
+                        </li>
+
+                        <li class="swiper-slide">
+                            <div class="flex flex-col gap-5 bg-slate-900 rounded-md p-6">
+                                <p class="font-Lobster">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique culpa ut amet voluptas asperiores alias sed consequatur.</p>   
+                                <div class="flex items-center">
+                                    <img src="carapp\static\assets\img\review-3.jpg" alt="review_image"
+                                    class="w-12 h-12 rounded-full">
+                                    <div class="ml-2 ">
+                                        <p class="text-amber-500 uppercase">John doe</p>   
+                                        <p>Designer</p>   
+                                    </div>    
+                                </div>   
+                                <i class="ri-double-quotes-r text-4xl ml-auto"></i>
+                            </div>
+                        </li>
+
+                        <li class="swiper-slide">
+                            <div class="flex flex-col gap-5 bg-slate-900 rounded-md p-6">
+                                <p class="font-Lobster">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique culpa ut amet voluptas asperiores alias sed consequatur.</p>   
+                                <div class="flex items-center">
+                                    <img src="carapp\static\assets\img\review-4.jpg" alt="review_image"
+                                    class="w-12 h-12 rounded-full">
+                                    <div class="ml-2 ">
+                                        <p class="text-amber-500 uppercase">John doe</p>   
+                                        <p>Designer</p>   
+                                    </div>    
+                                </div>   
+                                <i class="ri-double-quotes-r text-4xl ml-auto"></i>
+                            </div>
+                        </li>
+
+                    </ul>
+                    <div class="swiper-pagination"></div>
+                </div>    
+            </div>
+
+        </section>
+
+        <!--~~~~~~~~~~~~~~~ Cart Section ~~~~~~~~~~~~~~~-->
+        <section id="cart" class="bg-slate-800 py-20">
+            <div class="container">
+                <div class="text-center mb-12">
+                    <h2 class="title">Shopping Cart</h2>
+                    <p class="max-w-2xl mx-auto">Your selected auto parts</p>
+                </div>
+                
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-slate-900 rounded-lg p-6">
+                        <div class="space-y-4">
+                            <!-- Cart Item 1 -->
+                            <div class="flex items-center gap-4 p-4 bg-slate-800 rounded-lg">
+                                <img src="carapp\static\assets\img\cart_1.png" alt="headlights" class="w-16 h-16 rounded">
+                                <div class="flex-1">
+                                    <h3 class="text-lg font-semibold">LED Headlights</h3>
+                                    <p class="text-sm text-gray-400">High-performance lighting system</p>
+                                    <p class="text-amber-500 font-bold">$89.99</p>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <button class="bg-slate-700 px-3 py-1 rounded">-</button>
+                                    <span class="px-4">1</span>
+                                    <button class="bg-slate-700 px-3 py-1 rounded">+</button>
+                                </div>
+                                <button class="text-red-400 hover:text-red-300">
+                                    <i class="ri-delete-bin-line text-xl"></i>
+                                </button>
+                            </div>
+                            
+                            <!-- Cart Item 2 -->
+                            <div class="flex items-center gap-4 p-4 bg-slate-800 rounded-lg">
+                                <img src="carapp\static\assets\img\cart_2.png" alt="brake_disc" class="w-16 h-16 rounded">
+                                <div class="flex-1">
+                                    <h3 class="text-lg font-semibold">Brake Disc Set</h3>
+                                    <p class="text-sm text-gray-400">Premium brake system components</p>
+                                    <p class="text-amber-500 font-bold">$149.99</p>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <button class="bg-slate-700 px-3 py-1 rounded">-</button>
+                                    <span class="px-4">2</span>
+                                    <button class="bg-slate-700 px-3 py-1 rounded">+</button>
+                                </div>
+                                <button class="text-red-400 hover:text-red-300">
+                                    <i class="ri-delete-bin-line text-xl"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Cart Summary -->
+                        <div class="mt-6 pt-6 border-t border-slate-700">
+                            <div class="flex justify-between items-center text-lg">
+                                <span>Total: <span class="text-amber-500 font-bold">$389.97</span></span>
+                                <button class="btn">
+                                    <span>Proceed to Checkout</span>
+                                    <i class="ri-arrow-right-line"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--~~~~~~~~~~~~~~~ Dashboard Section ~~~~~~~~~~~~~~~-->
+        <section id="dashboard" class="bg-slate-900 py-20">
+            <div class="container">
+                <div class="text-center mb-12">
+                    <h2 class="title">Dashboard</h2>
+                    <p class="max-w-2xl mx-auto">Manage your account and orders</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Stats Card 1 -->
+                    <div class="dashboard-card p-6 rounded-lg">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm text-gray-400">Total Orders</p>
+                                <p class="text-2xl font-bold text-amber-500">24</p>
+                            </div>
+                            <i class="ri-shopping-bag-line text-3xl text-amber-500"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Stats Card 2 -->
+                    <div class="dashboard-card p-6 rounded-lg">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm text-gray-400">Total Spent</p>
+                                <p class="text-2xl font-bold text-amber-500">$2,450</p>
+                            </div>
+                            <i class="ri-money-dollar-circle-line text-3xl text-amber-500"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Stats Card 3 -->
+                    <div class="dashboard-card p-6 rounded-lg">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm text-gray-400">Active Orders</p>
+                                <p class="text-2xl font-bold text-amber-500">3</p>
+                            </div>
+                            <i class="ri-truck-line text-3xl text-amber-500"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Recent Orders -->
+                <div class="mt-12">
+                    <h3 class="text-xl font-semibold mb-6">Recent Orders</h3>
+                    <div class="bg-slate-800 rounded-lg overflow-hidden">
+                        <div class="overflow-x-auto">
+                            <table class="w-full">
+                                <thead class="bg-slate-700">
+                                    <tr>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase">Order ID</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase">Date</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase">Status</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-700">
+                                    <tr>
+                                        <td class="px-6 py-4 text-sm text-white">#AZ-2024-001</td>
+                                        <td class="px-6 py-4 text-sm text-gray-300">2024-01-15</td>
+                                        <td class="px-6 py-4 text-sm"><span class="px-2 py-1 bg-green-600 text-white rounded-full text-xs">Delivered</span></td>
+                                        <td class="px-6 py-4 text-sm text-amber-500 font-semibold">$189.99</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 text-sm text-white">#AZ-2024-002</td>
+                                        <td class="px-6 py-4 text-sm text-gray-300">2024-01-20</td>
+                                        <td class="px-6 py-4 text-sm"><span class="px-2 py-1 bg-yellow-600 text-white rounded-full text-xs">Processing</span></td>
+                                        <td class="px-6 py-4 text-sm text-amber-500 font-semibold">$299.99</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 text-sm text-white">#AZ-2024-003</td>
+                                        <td class="px-6 py-4 text-sm text-gray-300">2024-01-25</td>
+                                        <td class="px-6 py-4 text-sm"><span class="px-2 py-1 bg-blue-600 text-white rounded-full text-xs">Shipped</span></td>
+                                        <td class="px-6 py-4 text-sm text-amber-500 font-semibold">$149.99</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--~~~~~~~~~~~~~~~ Profile Section ~~~~~~~~~~~~~~~-->
+        <section id="profile" class="profile-section py-20">
+            <div class="container">
+                <div class="text-center mb-12">
+                    <h2 class="title">Profile Settings</h2>
+                    <p class="max-w-2xl mx-auto">Manage your account information</p>
+                </div>
+                
+                <div class="max-w-4xl mx-auto">
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        <!-- Profile Info -->
+                        <div class="lg:col-span-1">
+                            <div class="bg-slate-800 rounded-lg p-6 text-center">
+                                <img src="carapp\static\assets\img\review-1.jpg" alt="profile" class="w-30 h-30 rounded-full mx-auto mb-4">
+                                <h3 class="text-xl font-semibold mb-2">John Doe</h3>
+                                <p class="text-gray-400 mb-4">john.doe@email.com</p>
+                                <button class="btn btn_outline w-full">
+                                    <span>Edit Profile</span>
+                                    <i class="ri-edit-line"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Settings Form -->
+                        <div class="lg:col-span-2">
+                            <div class="bg-slate-800 rounded-lg p-6">
+                                <h3 class="text-xl font-semibold mb-6">Account Settings</h3>
+                                <form class="space-y-4">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-300 mb-2">First Name</label>
+                                            <input type="text" value="John" class="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:outline-none focus:border-amber-500">
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-300 mb-2">Last Name</label>
+                                            <input type="text" value="Doe" class="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:outline-none focus:border-amber-500">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                                        <input type="email" value="john.doe@email.com" class="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:outline-none focus:border-amber-500">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-300 mb-2">Phone</label>
+                                        <input type="tel" value="+1 (555) 123-4567" class="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:outline-none focus:border-amber-500">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-300 mb-2">Address</label>
+                                        <textarea class="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:outline-none focus:border-amber-500" rows="3">123 Main Street, City, State 12345</textarea>
+                                    </div>
+                                    <div class="flex gap-4 pt-4">
+                                        <button type="submit" class="btn">
+                                            <span>Save Changes</span>
+                                            <i class="ri-save-line"></i>
+                                        </button>
+                                        <button type="button" class="btn btn_outline">
+                                            <span>Cancel</span>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--~~~~~~~~~~~~~~~ Footer ~~~~~~~~~~~~~~~-->
+    <footer class="bg-amber-100 text-slate-950 pt-20 pb-10 md:pt-20 relative">
+        <!-- newsletter -->
+        <div class="container text-white absolute top-0 left-0
+            -translate-y-1/2">
+            <div class="bg-slate-950 px-10 pt-5 pb-10 space-y-5 rounded-md">
+                <h3>
+                    <span class="text-amber-500">Subscribe</span> to our newsletter
+                </h3>
+
+                <div class="flex flex-col md:flex-row gap-1">
+                    <input type="email" placeholder="Your Email Address"
+                    class="w-full px-5 py-3 text-slate-900 rounded-md outline-none">
+                    <button class="flex items-center justify-center gap-1 bg-slate-950 px-5 py-3
+                    rounded-md hover:text-amber-500 duration-300">
+                        <span class="">Subscribe</span>
+                        <i class="ri-send-plane-2-fill"></i>
+                    </button>
+                </div>       
+            </div>
+        </div>
+        
+        <!-- social icon -->
+        <div class="footer__icon container mt-16 mb-10">
+            <div class="border-b border-slate-500 relative">
+                <div class="absolute top-0 left-0 transform -translate-y-1/2 
+                right-0 max-w-36 mx-auto">
+                    <div class="bg-amber-100 text-lg text-center space-x-2">
+                        <i class="ri-facebook-fill hover:text-amber-500 duration-300 hover:cursor-pointer"></i>
+                        <i class="ri-twitter-x-line hover:text-amber-500 duration-300 hover:cursor-pointer text-base"></i>
+                        <i class="ri-instagram-line hover:text-amber-500 duration-300 hover:cursor-pointer"></i>
+                        <i class="ri-linkedin-fill hover:text-amber-500 duration-300 hover:cursor-pointer"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- content -->
+        <div class="footer__content container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4
+        gap-0 text-center md:text-start">
+            <!-- Item 1 -->
+            <div>
+                <div class="text-7xl text-slate-700 text-center inline-block">
+                    
+                    <i class="fa-solid fa-car-burst"></i>
+                    <p class="font-lobster text-xl sm:text-2xl">Azaz Cars.</p>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div>
+                <p class="mb-5 font-bold text-xl">Quick Link</p>
+
+                <div class="flex flex-col gap-1">
+                    <a href="#Plants">Cars</a>
+                    <a href="#Flowers">Parts</a>
+                    <a href="#Seeds">Orders</a>
+                    <a href="#Gerdening">Payments</a>
+                    <a href="#Shipping">Shipping</a>
+                </div>
+            </div>
+            
+            <!-- Item 3 -->
+            <div>
+                <p class="mb-5 font-bold text-xl">Popular Services</p>
+
+                <div class="flex flex-col gap-1">
+                    <a href="#Motors">Motors</a>
+                    <a href="#Wheels">Wheels</a>
+                    <a href="#Brakes">Brakes</a>
+                    <a href="#Project">Project</a>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div>
+                <p class="mb-5 font-bold text-xl">Contact Us</p>
+
+                <div class="flex flex-col gap-1">
+                    <a href="tel:+8833378901">+88 333 78 901</a>
+                    <a href="mailto:lightcodecamp@gmail.com">lightcodecamp@gmail.com</a>
+                    <br>
+                    <p>1234 Tailwind Ave, CSS City, Webland 56789, USA</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- copyright -->
+        <div class="copy__right container">
+            <p class="text-center mt-10 opacity-50">Copyright &copy; 2024 LightCode. All rights reserved.</p>
+        </div>
+
+
+        <!-- floral image -->
+        <div class="footer__floral absolute bottom-0 left-0 opacity-20 pointer-events-none">
+            <img src="carapp\static\assets\img\floral_1.png" alt="floral_image"
+            class="w-full lg:w-1/2">
+        </div>    
+
+    </footer>
+
+    <!--~~~~~~~~~~~~~~~ Scroll Up ~~~~~~~~~~~~~~~-->
+    <a href="#" class="fixed right-4 -bottom-1/2 bg-amber-500 shadow-sm inline-block px-3 py-1 md:px-4 md:py-2 rounded-md text-lg z-50
+        hover:-translate-y-1 duration-300" id="scroll-up">
+        <i class="ri-arrow-up-line"></i>
+    </a>
+
+    <!--~~~~~~~~~~~~~~~ Authentication Modals ~~~~~~~~~~~~~~~-->
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2 class="text-2xl font-bold mb-6 text-center">Login</h2>
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                    <input type="email" placeholder="Enter your email" class="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:outline-none focus:border-amber-500">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-300 mb-2">Password</label>
+                    <input type="password" placeholder="Enter your password" class="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:outline-none focus:border-amber-500">
+                </div>
+                <button type="submit" class="btn w-full">
+                    <span>Login</span>
+                    <i class="ri-login-box-line"></i>
+                </button>
+                <p class="text-center text-sm text-gray-400">
+                    Don't have an account? <button onclick="closeModal('loginModal'); openModal('signupModal')" class="text-amber-500 hover:underline">Sign up</button>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('signupModal')">&times;</span>
+            <h2 class="text-2xl font-bold mb-6 text-center">Sign Up</h2>
+            <form class="space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">First Name</label>
+                        <input type="text" placeholder="First name" class="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:outline-none focus:border-amber-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Last Name</label>
+                        <input type="text" placeholder="Last name" class="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:outline-none focus:border-amber-500">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                    <input type="email" placeholder="Enter your email" class="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:outline-none focus:border-amber-500">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-300 mb-2">Password</label>
+                    <input type="password" placeholder="Create a password" class="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:outline-none focus:border-amber-500">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-300 mb-2">Confirm Password</label>
+                    <input type="password" placeholder="Confirm your password" class="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:outline-none focus:border-amber-500">
+                </div>
+                <button type="submit" class="btn w-full">
+                    <span>Create Account</span>
+                    <i class="ri-user-add-line"></i>
+                </button>
+                <p class="text-center text-sm text-gray-400">
+                    Already have an account? <button onclick="closeModal('signupModal'); openModal('loginModal')" class="text-amber-500 hover:underline">Login</button>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!--~~~~~~~~~~~~~~~ Swiper JS ~~~~~~~~~~~~~~~-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <!--~~~~~~~~~~~~~~~ ScrollReveal JS ~~~~~~~~~~~~~~~-->
+    <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
+
+    <!--~~~~~~~~~~~~~~~ JavaScript ~~~~~~~~~~~~~~~-->
+    <script>
+        // Modal functions
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        }
+
+        // Mobile menu toggle
+        const navMenu = document.getElementById("navMenu");
+        const navLinks = document.querySelectorAll(".nav-link");
+        const menuIcon = document.getElementById("menuIcon");
+
+        menuIcon.addEventListener("click", () => {
+            navMenu.classList.toggle("left-[-100%]");
+            navMenu.classList.toggle("left-0");
+            menuIcon.classList.toggle("ri-close-large-line");
+        });
+
+        // Show scroll up button
+        const scrollUp = () => {
+            const scrollUpBtn = document.getElementById("scroll-up");
+            if (window.scrollY >= 250) {
+                scrollUpBtn.classList.remove("-bottom-1/2");
+                scrollUpBtn.classList.add("bottom-8");
+            } else {
+                scrollUpBtn.classList.remove("bottom-8");
+                scrollUpBtn.classList.add("-bottom-1/2");
+            }
+        };
+
+        window.addEventListener("scroll", scrollUp);
+
+        // Change background header on scroll
+        const scrollHeader = () => {
+            const header = document.getElementById("navbar");
+            if (window.scrollY >= 50) {
+                header.classList.add("border-b", "border-yellow-500");
+            } else {
+                header.classList.remove("border-b", "border-yellow-500");
+            }
+        };
+
+        window.addEventListener("scroll", scrollHeader);
+
+        // Swiper initialization
+        const swiper = new Swiper('.swiper', {
+            speed: 400,
+            spaceBetween: 30,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            grabCursor: true,
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                },
+                760: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+            },
+        });
+
+        // Active link on scroll
+        const activeLink = () => {
+            const sections = document.querySelectorAll("section");
+            const navLinks = document.querySelectorAll(".nav-link");
+
+            let current = "home";
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+
+                if (window.scrollY >= sectionTop - 60) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach(item => {
+                item.classList.remove("active");
+                if (item.href.includes(current)) {
+                    item.classList.add("active");
+                }
+            });
+        };
+
+        window.addEventListener("scroll", activeLink);
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // ScrollReveal animations
+        const sr = ScrollReveal({
+            origin: "top",
+            distance: "60px",
+            duration: 2500,
+            delay: 300,
+            reset: true,
+        });
+
+        sr.reveal('.home__data, .about__top, .popular__top, .review__top, .review__swiper, .footer__content, .footer__icon, .copy__right');
+        sr.reveal('.home__image', {delay:500, scale:0.5});
+        sr.reveal('.service__card, .popular__card', {interval:100});
+        sr.reveal('.about__leaf', {delay:100, origin:"right"});
+        sr.reveal('.about__item__1-img, .about__item__1-content', {origin:"right"});
+        sr.reveal('.about__item__2-img, .about__item__2-content', {origin:"left"});
+        sr.reveal('.review__leaf, .footer__floral', {delay:1000, origin:"left"});
+    </script>
+</body>
+</html>
